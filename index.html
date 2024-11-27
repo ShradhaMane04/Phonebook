@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhoneBook</title>
+    <style>
+        .heading {
+            text-align: center;
+        }
+
+        .center {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            margin-left: 40px;
+            padding: 7px 15px;
+            background-color: rgb(60, 109, 206);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .searchbar {
+            width: 300px;
+            border-radius: 4px solid black;
+        }
+
+        #result {
+            text-align: center;
+            margin-top: 80px;
+            font-size: 30px;
+        }
+
+        .parent {
+            position: absolute;
+            right: 10px;
+            top:40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: end;
+            height: auto;
+            flex-wrap: wrap;
+            cursor: pointer;
+        }
+
+        .child {
+            background-color: white;
+            border-radius: 10px;
+            margin: 7px;
+
+        }
+
+        .card {
+            text-align: center;
+            margin: 2px;
+            padding: 0;
+
+        }
+
+        .text {
+            margin-left: 30px;
+        }
+
+        .items {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .div {
+
+            height: 30px;
+        }
+        .position{
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">Contact Book</h1>
+    <div class="center">
+        <input type="text" id="search" placeholder="Search among 5 contact(s)" class="searchbar" />
+        <button type="button" onclick="search()" class="btn">Search</button>
+    </div>
+
+    <p id="result"></p>
+
+
+    <div class="position">
+
+
+        <h1 class="heading">Contacts</h1>
+
+        <div class="div">
+            <span class="items">
+                <i class="fa-solid fa-user">Shradha</i> </span>
+        </div>
+        <br>
+        <div class="div">
+            <span class="items">
+                <i class="fa-solid fa-user">Sandhya</i> </span>
+        </div>
+        <br>
+        <div class="div">
+            <span class="items">
+                <i class="fa-solid fa-user">Gururaj</i> </span>
+        </div>
+        <br>
+        <div class="div">
+            <span class="items">
+                <i class="fa-solid fa-user">Aditya</i> </span>
+        </div>
+        <br>
+        <div class="div">
+            <span class="items">
+                <i class="fa-solid fa-user">Vedant</i> </span>
+        </div>
+
+
+    </div>
+ <br>
+     <div class="parent">
+        <div class="child">
+            <h4 class="card">
+                A
+            </h4>
+            <h4 class="card">
+                B
+            </h4>
+            <h4 class="card">
+                C
+            </h4>
+            <h4 class="card">
+                D
+            </h4>
+            <h4 class="card">
+                E
+            </h4>
+            <h4 class="card">
+                F
+            </h4>
+            <h4 class="card">
+                G
+            </h4>
+            <h4 class="card">
+                H
+            </h4>
+            <h4 class="card">
+                I
+            </h4>
+            <h4 class="card">
+                J
+            </h4>
+            <h4 class="card">
+                K
+            </h4>
+            <h4 class="card">
+                L
+            </h4>
+            <h4 class="card">
+                M
+            </h4>
+            <h4 class="card">
+                N
+            </h4>
+            <h4 class="card">
+                O
+            </h4>
+            <h4 class="card">
+                P
+            </h4>
+            <h4 class="card">
+                Q
+            </h4>
+            <h4 class="card">
+                R
+            </h4>
+            <h4 class="card">
+                S
+            </h4>
+            <h4 class="card">
+                T
+            </h4>
+            <h4 class="card">
+                U
+            </h4>
+            <h4 class="card">
+                V
+            </h4>
+            <h4 class="card">
+                W
+            </h4>
+            <h4 class="card">
+                X
+            </h4>
+            <h4 class="card">
+                Y
+            </h4>
+            <h4 class="card">
+                Z
+            </h4>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/7b6884abf8.js" crossorigin="anonymous"></script>
+    <script>
+        const contacts = {
+            shradha: "4546782901",
+            sandhya: "9876543245",
+            guru: "9876543234",
+            aditya: "987654323456",
+            vedant: "987654323456"
+        }
+        function search() {
+            const searchInput = document.getElementById("search");
+            const query = searchInput.value.toLowerCase();
+            const mobile = contacts[query]
+            const result = document.getElementById("result");
+
+            if (mobile) {
+                result.innerText = ` ${query} : ${mobile}`;
+            }
+            else {
+                result.innerText = "Contact Not Found";
+            }
+        }
+
+    </script>
+    
+</body>
+
+</html>
